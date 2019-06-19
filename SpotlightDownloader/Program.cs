@@ -278,7 +278,11 @@ namespace SpotlightDownloader
                             Console.Error.WriteLine(e.GetType() + ": " + e.Message);
                             Environment.Exit(3);
                         }
-                    } while (downloadMany && (downloadCount > 0 || noNewImgCount < 10));
+
+                        Console.WriteLine(noNewImgCount);
+
+                    //} while (downloadMany && (downloadCount > 0 || noNewImgCount < 10));
+                    } while (downloadMany && noNewImgCount < 1000);
                     Environment.Exit(0);
                 }
                 catch (Exception e)
